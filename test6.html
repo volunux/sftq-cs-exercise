@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test 6 (4/20)</title>
+</head>
+<body>
+
+<pre>
+Test 6 (4/20)
+Write a regular expression to match strings containing both "Softeq" and "#rules" in any order.
+</pre>
+
+<p> <b>Solution: </b> </p>
+
+<pre>
+
+let softeqRules = /Softeq.*#rules|#rules.*Softeq/;
+
+console.log('Test 1: Hello Softeq World #rules ' + softeqRules.test('Hello Softeq World #rules'));
+console.log('Test 2: Softeq #rules ' + softeqRules.test('Softeq #rules'));
+console.log('Test 3: #rules Softeq ' + softeqRules.test('#rules Softeq'));
+console.log('Test 4: #rules softeq ' + softeqRules.test('Test 4: #rules softeq'));
+</pre>
+
+</body>
+</html>

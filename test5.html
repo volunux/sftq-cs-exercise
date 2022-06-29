@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test 5 (5/20)</title>
+</head>
+<body>
+
+<pre>
+Test 5 (5/20)
+Write a function that gets JSON from the following link (https://jsonplaceholder.typicode.com/posts) and returns an object with id = 5.
+</pre>
+
+
+<p> <b>Solution: </b> </p>
+
+<pre>
+
+function getPostWithID() {
+    let postId = 5;
+
+    return new Promise((resolve, reject) => {
+      let post = null;
+      const postsJson = new XMLHttpRequest();
+      postsJson.open('GET','https://jsonplaceholder.typicode.com/posts');
+      postsJson.onload = function(res) {
+        let result = res.target.response;
+        if (result) {
+           try {
+             let posts = JSON.parse(result);
+             if (Array.isArray(posts)) {
+                let postResult = posts.find(post => post.id == postId);
+                post = postResult ? postResult : null; 
+              }
+            }
+            catch(err) {
+              console.error(err);
+            }
+          }
+          resolve(post);
+    }
+
+      postsJson.setRequestHeader('Content-Type', 'application/json');
+      postsJson.send();
+        
+    });
+}
+
+let post = await getPostWithID();
+
+</pre>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test 4 (3/20)</title>
+</head>
+<body>
+
+<pre>
+Test 4 (3/20)
+Write a function that takes a list of strings and returns the sum of the list items that represent an integer (skipping the other items).
+
+Example:
+
+Input: [‘1’, ‘a’, ‘25’, ‘13.1’].
+Output: 26.
+</pre>
+
+<p> <b>Solution: </b> </p>
+
+<pre>
+
+  function sumOfListItems(listOfItems) {
+   
+    if (!Array.isArray(listOfItems)) return 0;
+
+    return listOfItems.filter(item => Number.isInteger(+item))
+      .reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0);
+  }
+
+</pre>
+
+</body>
+</html>

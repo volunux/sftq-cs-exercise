@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test 7 (5/20)</title>
+</head>
+<body>
+
+<pre>
+Test 7 (5/20)
+Write a function that, when called, returns an array for which each element is a letter of the alphabet, from "A" to "Z" (exactly once, in order and upper case). 
+Your code cannot contain the character ' (quote), " (double quote) or ` (backquote).
+</pre>
+
+<p> <b>Solution: </b> </p>
+
+<pre>
+
+function sortAlphabets(alphs) {
+
+let alphabets = alphs
+    .filter((ltr, idx, arr) => ltr && typeof ltr === 'string' && ltr.length === 1 && arr.indexOf(ltr) === idx)
+    .map((ltr) => ltr.toUpperCase())
+    .sort();
+    return alphabets;
+}
+
+var alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "", 22];
+
+sortAlphabets(alphabets);
+
+</pre>
+
+</body>
+</html>

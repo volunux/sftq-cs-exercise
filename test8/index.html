@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test 8* (6/20)</title>
+</head>
+<body>
+
+<pre>
+Test 8* (6/20)
+Solve the game "Guess a number", find a secret integer between 1 and 1000000 in less than 50 guesses. Write a function that solves the game and returns the solution by using the function
+verify() which is defined with the following specification: 
+
+    <code style ="font-family: courier">function verify(guess: integer) -> integer</code>
+
+  Returns:
+  ● 0 if the guess is the solution, your program won,
+  ● -1 if the solution is smaller than the guessing parameter,
+  ● 1 if the solution is bigger than the guessing parameter.
+Warning: You are not allowed to call verify() more than 50 times or you lose.
+
+</pre>
+
+  <h1> Guess a Number</h1>
+
+  <fieldset>
+
+    <label for ="guess_number">Enter a Number: </label>
+    <input type ="text" name ="guess_number" id ="guess_number_field" />
+    <input type ="submit" value ="Submit" id ="guess_submit_btn"/>
+    <input type ="button" value ="Restart" id ="guess_restart_button"/>
+
+  </fieldset>
+
+  <p>Guess validity : <span id ="guess_status"></span> </p>
+  <p> Guess remaining: <span id ="guess_count"></span></p>
+
+</body>
+<script src ="./index.js" type="text/javascript"></script>
+</html>
