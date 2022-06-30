@@ -18,13 +18,13 @@ Your code cannot contain the character ' (quote), " (double quote) or ` (backquo
 function sortAlphabets(alphs) {
 
 let alphabets = alphs
-    .filter((ltr, idx, arr) => ltr && typeof ltr === 'string' && ltr.length === 1 && arr.indexOf(ltr) === idx)
+    .filter((ltr, idx, arr) => ltr && ltr != ' ' && typeof ltr === 'string' && ltr.length === 1 && alphs.indexOf(ltr) === idx)
     .map((ltr) => ltr.toUpperCase())
     .sort();
     return alphabets;
 }
 
-var alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "", 22];
+var alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "", 22 , "B", "T" , "AAAAAAA", "EF", "Z" , "K", ' '];
 
 sortAlphabets(alphabets);
 

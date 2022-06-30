@@ -11,7 +11,7 @@ Write a function that takes a list of strings and returns the sum of the list it
 
 Example:
 
-Input: [‘1’, ‘a’, ‘25’, ‘13.1’].
+Input: ['1', 'a', '25', '13.1']
 Output: 26.
 </pre>
 
@@ -26,6 +26,8 @@ Output: 26.
     return listOfItems.filter(item => Number.isInteger(+item))
       .reduce((accumulator, currentValue) => accumulator + parseInt(currentValue), 0);
   }
+
+  sumOfListItems(['1', 'a', '25', '13.1']);
 
 </pre>
 
