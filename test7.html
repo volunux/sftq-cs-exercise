@@ -20,13 +20,13 @@ function sortAlphabets(alphs) {
   if (!Array.isArray(alphs)) return [];
 
   let alphabets = alphs
-    .filter((ltr, idx, arr) => ltr && ltr != ' ' && typeof ltr === 'string' && ltr.length === 1 && alphs.indexOf(ltr) === idx)
+    .filter((ltr, idx, arr) => ltr && ltr != ' ' && typeof ltr === 'string' && Number.isNaN(Number.parseInt(ltr)) && ltr.length === 1 && alphs.indexOf(ltr) === idx)
     .map((ltr) => ltr.toUpperCase())
     .sort();
     return alphabets;
 }
 
-var alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "", 22 , "B", "T" , "AAAAAAA", "EF", "Z" , "K", ' '];
+var alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "", 22 , "B", "T" , "AAAAAAA", "EF", "Z" , "K", ' ' , "2"];
 
 sortAlphabets(alphabets);
 
