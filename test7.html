@@ -17,7 +17,9 @@ Your code cannot contain the character ' (quote), " (double quote) or ` (backquo
 
 function sortAlphabets(alphs) {
 
-let alphabets = alphs
+  if (!Array.isArray(alphs)) return [];
+
+  let alphabets = alphs
     .filter((ltr, idx, arr) => ltr && ltr != ' ' && typeof ltr === 'string' && ltr.length === 1 && alphs.indexOf(ltr) === idx)
     .map((ltr) => ltr.toUpperCase())
     .sort();
